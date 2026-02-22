@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket Demo</title>
+</head>
+<body>
+
+<h1 id="text">Hello</h1>
+<button onclick="change()">Change Text</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  function change(){
+    socket.emit ("changeText","Text Changddddddddedpaip 🔥")
+  }
+   
+  socket.on("updateText",(data)=>{
+    document.getElementById("text").innerText = data
+  })
+</script>
+
+</body>
+</html>
